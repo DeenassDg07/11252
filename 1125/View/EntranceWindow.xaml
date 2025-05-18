@@ -29,7 +29,7 @@
                 <TextBox Text="{Binding Password}"  Height="40"  Width="200"/>
                     </Border>
             </StackPanel>
-            <Button Command="{Binding Registration}" IsEnabled="{Binding CanRegister}" BorderThickness="0" VerticalAlignment="Bottom" Content="Войти" Foreground="White" Background="#FF2027BC" FontSize="20" Grid.Column="1" Grid.Row ="2"  Width="170" Height="40">
+            <Button Command="{Binding Logingo}" BorderThickness="0" VerticalAlignment="Bottom" Content="Войти" Foreground="White" Background="#FF2027BC" FontSize="20" Grid.Column="1" Grid.Row ="2"  Width="170" Height="40">
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Border 

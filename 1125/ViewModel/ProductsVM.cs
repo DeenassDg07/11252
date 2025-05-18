@@ -30,12 +30,6 @@ namespace _1125.ViewModel
                 categoryWindow.ShowDialog();
             }, () => true);
 
-            Baket = new CommandVM(() =>
-            {
-                BasketWindow basketWindow = new BasketWindow();
-                close?.Invoke();
-                basketWindow.ShowDialog();
-            }, () => true);
         }
 
         private void Search(string productType)

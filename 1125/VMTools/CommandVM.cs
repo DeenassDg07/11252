@@ -22,7 +22,6 @@ namespace _1125.VMTools
 
         public bool CanExecute(object parameter)
         {
-            // Если canExecute == null — считаем, что команда всегда доступна
             return canExecute == null || canExecute();
         }
 

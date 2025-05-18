@@ -18,7 +18,7 @@ namespace _1125.ViewModel
         private string login;
         private string password;
         private string password2;
-        public ICommand Registration { get; set; }
+        public ICommand Logingood { get; set; }
         public string Login
         {
             get => login;
@@ -58,7 +58,7 @@ namespace _1125.ViewModel
         public RegistrationVM()
         {
 
-            Registration = new CommandVM(() =>
+            Logingood = new CommandVM(() =>
             {
                 if (string.IsNullOrWhiteSpace(Login) || string.IsNullOrWhiteSpace(Password) != string.IsNullOrWhiteSpace(Password2))
                 {

@@ -50,10 +50,9 @@ namespace _1125.ViewModel
                 Signal();
             }
         }
+       
+        
         public ICommand Registration { get; set; }
-
-
-
         public EntranceVM()
         {
             Registration = new CommandVM(() =>
