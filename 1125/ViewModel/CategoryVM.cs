@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using _1125.DB;
 using _1125.Model;
 using _1125.View;
 using _1125.VMTools;
@@ -17,7 +18,8 @@ namespace _1125.ViewModel
         public ICommand ProductsFridge { get; set; }
         public ICommand ProductsTV { get; set; }
         public ICommand ProductsTelephone { get; set; }
-    public CategoryVM()
+        
+        public CategoryVM()
         {
             ProductsVacuumСleaner = new CommandVM(() =>
             {
@@ -54,6 +56,7 @@ namespace _1125.ViewModel
                 productsWindow.ShowDialog();
             }, () => true);
         }
+        
         Action close;
         internal void SetClose(Action close)
         {

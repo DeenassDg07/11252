@@ -26,9 +26,16 @@ namespace _1125.View
             InitializeComponent();
             var vm = new ProductsVM(productType);
             vm.SetClose(Close);
-            DataContext = vm;          
+            DataContext = vm;
+            
         }
-
+        public ProductsWindow(bool CanBaket)
+        {
+            InitializeComponent();
+            DataContext = new ProductsVM(CanBaket);
+        }
         
+
+
     }
 }

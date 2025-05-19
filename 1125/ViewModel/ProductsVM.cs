@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using _1125.VMTools;
 using System.Windows.Input;
 using _1125.View;
+using _1125.Model;
 
 namespace _1125.ViewModel
 {
@@ -31,7 +32,22 @@ namespace _1125.ViewModel
             }, () => true);
 
         }
+        public bool CanBaket { get; } = true;
+        public ProductsVM(bool canBaket)
+        {
+            CanBaket = canBaket;
+            if (user.Role == "user")
+            {
 
+                BasketWindow basketwindow = new BasketWindow();
+                basketwindow.ShowDialog();
+                close?.Invoke();
+            }
+            else if (user.Role == "guest")
+            {
+               
+            }
+        }
         private void Search(string productType)
         {
             

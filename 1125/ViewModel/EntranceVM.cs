@@ -62,8 +62,8 @@ namespace _1125.ViewModel
                 {
                     //if(user.Role == )
                     // надо куда-то сохранить пользователя, чтобы дальше с ним можно было работать
-                    ProductsWindow productswindow = new ProductsWindow("");
-                    productswindow.ShowDialog();
+                    CategoryWindow categoryWindow = new CategoryWindow();
+                    categoryWindow.ShowDialog();
                     close?.Invoke();
                 }
             });
@@ -85,13 +85,17 @@ namespace _1125.ViewModel
                     if (user.Role == "user")
                     {
                         // надо куда-то сохранить пользователя, чтобы дальше с ним можно было работать
-                        ProductsWindow productswindow = new ProductsWindow("");
-                        productswindow.ShowDialog();
+                        CategoryWindow categoryWindow = new CategoryWindow();
+                        categoryWindow.ShowDialog();
                         close?.Invoke();
                     }
                     else if (user.Role == "director")
                     {
+
                         // надо куда-то сохранить пользователя, чтобы дальше с ним можно было работать
+                        CategoryWindow categoryWindow = new CategoryWindow();
+                        categoryWindow.ShowDialog();
+                        close?.Invoke();
                         EditingAddingWindow editingaddingwindow = new EditingAddingWindow();
                         editingaddingwindow.ShowDialog();
                         close?.Invoke();
