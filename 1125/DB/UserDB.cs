@@ -29,7 +29,7 @@ namespace _1125.DB
 
             if (connection.OpenConnection())
             {
-                MySqlCommand cmd = connection.CreateCommand("insert into `user` Values (0, @login, @password );select LAST_INSERT_ID();");
+                MySqlCommand cmd = connection.CreateCommand("insert into `user` Values (0,2, @login, @password );select LAST_INSERT_ID();");
 
 
 
@@ -44,7 +44,7 @@ namespace _1125.DB
                     int id = (int)(ulong)cmd.ExecuteScalar();
                     if (id > 0)
                     {
-                        MessageBox.Show(id.ToString());
+                       
                         User.Id = id;
                         result = true;
                     }
@@ -62,20 +62,22 @@ namespace _1125.DB
             return result;
         }
 
-        internal List<User> SelectAll()
+        internal User Auth(string l, string p)
         {
-            List<User> user = new List<User>();
+            User user = new ();
             if (connection == null)
                 return user;
 
             if (connection.OpenConnection())
             {
-                var command = connection.CreateCommand("select `id`, `login`, `Password` from `user` ");
+                var command = connection.CreateCommand("select user.`id`, `login`, `Password`, r.`name` from `user` join role r on r.Id = user.roleid where login = @login and Password = @password ");
+                command.Parameters.Add(new MySqlParameter("login", l));
+                command.Parameters.Add(new MySqlParameter("password", p));
                 try
                 {
                     MySqlDataReader dr = command.ExecuteReader();
 
-                    while (dr.Read())
+                    if (dr.Read())
                     {
                         int id = dr.GetInt32(0);
                         string login = string.Empty;
@@ -85,14 +87,13 @@ namespace _1125.DB
                         if (!dr.IsDBNull(2))
                             password = dr.GetString("password");
 
-
-
-                        user.Add(new User
+                        user = new User
                         {
                             Id = id,
                             Login = login,                       
                             Password = password,
-                        });
+                             Role = dr.GetString("name")
+                        };
                     }
                 }
                 catch (Exception ex)
@@ -103,6 +104,7 @@ namespace _1125.DB
             connection.CloseConnection();
             return user;
         }
+
         internal bool Update(User edit)
         {
             bool result = false;

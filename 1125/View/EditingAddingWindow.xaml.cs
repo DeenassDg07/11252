@@ -23,7 +23,7 @@ namespace _1125.View
         public EditingAddingWindow()
         {
             InitializeComponent();
-            DataContext = new EditingAddingWindow();
+            DataContext = new EditingAddingWindowViewModel();
         }
     }
 }

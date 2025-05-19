@@ -1,5 +1,6 @@
 ﻿using _1125.DB;
 using _1125.Model;
+using _1125.View;
 using _1125.VMTools;
 using System;
 using System.Collections.Generic;
@@ -59,7 +60,12 @@ namespace _1125.ViewModel
         {
 
             Logingood = new CommandVM(() =>
-            {
+            { 
+                if (Login == Password)
+                {
+                    MessageBox.Show("Пароль слишком лёгкий");
+                    return; 
+                }
                 if (string.IsNullOrWhiteSpace(Login) || string.IsNullOrWhiteSpace(Password) != string.IsNullOrWhiteSpace(Password2))
                 {
                     MessageBox.Show("Поля заполнены неверно");
@@ -74,16 +80,17 @@ namespace _1125.ViewModel
                     };
                     UserDB.GetDb().Insert(user);
 
-                    MessageBox.Show("Вы зареганы");
-                    SelectAllUser();
-
+                    EntranceWindow entrancewindow = new EntranceWindow(true);
+                    entrancewindow.Show();
+                    close?.Invoke();
+                    
                 }
             }, () => true);
         }
-
-        private void SelectAllUser()
+        Action close;
+        internal void SetClose(Action close)
         {
-            throw new NotImplementedException();
+            this.close = close;
         }
     }
 }
