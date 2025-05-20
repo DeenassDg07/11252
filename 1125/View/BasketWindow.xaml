@@ -18,9 +18,9 @@
                 <Border BorderBrush="#2027BC" BorderThickness="3" Height="35" Margin="0,0,30,0">
                     <TextBlock Height="35" Width="165" VerticalAlignment="Center" />
                 </Border>
-                <Button BorderThickness="0" Height="35" Width="165" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="20" Content="Назад" Foreground="White" Background="#FF2027BC" >
+                <Button Command="{Binding Back2}" BorderThickness="0" Height="35" Width="165" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="20" Content="Назад" Foreground="White" Background="#FF2027BC" >
             <Button.Template>
-                <ControlTemplate TargetType="Button">
+                        <ControlTemplate TargetType="Button" >
                     <Border 
                 Background="{TemplateBinding Background}"
                 BorderBrush="{TemplateBinding BorderBrush}"
@@ -33,7 +33,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-            <Button BorderThickness="0" Height="35" Width="165" VerticalAlignment="Center" HorizontalAlignment="Right
+                <Button Command="{Binding Order}" BorderThickness="0" Height="35" Width="165" VerticalAlignment="Center" HorizontalAlignment="Right
                 " FontSize="20" Content="Заказать" Foreground="White" Background="#FF2027BC">
                 <Button.Template>
                     <ControlTemplate TargetType="Button">

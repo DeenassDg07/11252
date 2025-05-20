@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_1125.View"
         mc:Ignorable="d"
-        Title="ProductsWindow" Height="450" Width="700"
+        Title="ProductsWindow" Height="450" Width="800"
     xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2">
     <Window.Resources>
         <Style x:Key="ColoredComboBoxStyle" TargetType="ComboBox">
@@ -306,8 +306,8 @@
                 <RowDefinition />
             </Grid.RowDefinitions>
             <StackPanel  Orientation="Horizontal" Grid.Row="1"  >
-                <Border BorderBrush="#2027BC" BorderThickness="3" Width="350" Height="35" Margin="5,0,15,0">
-                    <TextBox Width="350" Text="Поиск:" HorizontalAlignment="Left" Height="35" VerticalAlignment="Center" FontSize="20"   />
+                <Border BorderBrush="#2027BC" BorderThickness="3" Width="400" Height="35" Margin="5,0,15,0">
+                    <TextBox Width="400" Text="Поиск:" HorizontalAlignment="Left" Height="35" VerticalAlignment="Center" FontSize="20"   />
                 </Border>
                 <ComboBox Style="{DynamicResource ComboBoxStyle1}" Width="245" Height="35" >
                     <ComboBoxItem Content="Недорогие"/>
@@ -324,7 +324,7 @@
 
             <Button Command="{Binding Back}" BorderThickness="0" Grid.Row="2"  Width="150" HorizontalAlignment="Left" Background="#FF2027BC" Foreground="White" Content="Назад" FontSize="20" Margin="5,0,0,0"/>
             <ScrollViewer Grid.Row="3">
-                <ListBox  >
+                <ListBox ItemsSource="{Binding Products}">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <Border BorderBrush="#FFA4A4A4" BorderThickness="3"  CornerRadius="10">

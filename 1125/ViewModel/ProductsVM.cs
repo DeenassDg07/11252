@@ -7,18 +7,44 @@ using _1125.VMTools;
 using System.Windows.Input;
 using _1125.View;
 using _1125.Model;
+using System.Windows;
+using _1125.DB;
 
 namespace _1125.ViewModel
 {
     internal class ProductsVM : BaseVM
     {
+        Action close;
+        private List<Product> products;
+        private Product selectedProduct;
+
         public ICommand Back { get; set; }
         public ICommand Baket { get; set; }
        
         public bool CanRegister { get; }
 
+        public List<Product> Products 
+        { 
+            get => products; 
+            set
+            {
+                products = value;
+                Signal();
+            }
+        }
+        public Product SelectedProduct 
+        { 
+            get => selectedProduct; 
+            set
+            {
+                selectedProduct = value;
+                Signal();
+            }
+        }
+
         public ProductsVM(string productType)
         {
+            SelectAll();
             if (!string.IsNullOrEmpty(productType))
             {
                 Search(productType);
@@ -33,30 +59,21 @@ namespace _1125.ViewModel
 
         }
         public bool CanBaket { get; } = true;
-        public ProductsVM(bool canBaket)
-        {
-            CanBaket = canBaket;
-            if (user.Role == "user")
-            {
-
-                BasketWindow basketwindow = new BasketWindow();
-                basketwindow.ShowDialog();
-                close?.Invoke();
-            }
-            else if (user.Role == "guest")
-            {
-               
-            }
-        }
+        
         private void Search(string productType)
         {
             
         }
 
-        Action close;
+
         internal void SetClose(Action close)
         {
             this.close = close;
+        }
+
+        private void SelectAll()
+        {
+            Products = ProductDB.GetDb().SelectAll();
         }
     }
 }

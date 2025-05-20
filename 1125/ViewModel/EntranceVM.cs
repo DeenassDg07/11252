@@ -96,9 +96,7 @@ namespace _1125.ViewModel
                         CategoryWindow categoryWindow = new CategoryWindow();
                         categoryWindow.ShowDialog();
                         close?.Invoke();
-                        EditingAddingWindow editingaddingwindow = new EditingAddingWindow();
-                        editingaddingwindow.ShowDialog();
-                        close?.Invoke();
+
                     }
                 }
             });
