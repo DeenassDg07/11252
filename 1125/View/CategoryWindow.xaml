@@ -18,21 +18,21 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Button Command="{Binding ProductsVacuumСleaner}" Grid.Row="0" Height="30" Width="200" FontSize="20" Foreground="#2027BC" Background="White" BorderThickness="0" >
+            <Button Command="{Binding ProductsVacuumСleaner}"  Grid.Row="0" Height="30" Width="200" FontSize="20" Foreground="#2027BC" Background="White" BorderThickness="0" >
                 <TextBlock>
                 <Underline>
                     Пылесос
                 </Underline>
                 </TextBlock>
             </Button>
-            <Button  Command="{Binding ProductsMicrowave}" Grid.Row="1" Height="30" Width="200" FontSize="20" Foreground="#2027BC" Background="White" BorderThickness="0" >
+            <Button  Command="{Binding ProductsMicrowave}"  Grid.Row="1" Height="30" Width="200" FontSize="20" Foreground="#2027BC" Background="White" BorderThickness="0" >
                 <TextBlock>
         <Underline>
             Микроволновка
         </Underline>
                 </TextBlock>
             </Button>
-            <Button  Command="{Binding ProductsFridge}" Grid.Row="2" Height="30" Width="200" FontSize="20" Foreground="#2027BC" Background="White" BorderThickness="0" >
+            <Button  Command="{Binding ProductsFridge}"  Grid.Row="2" Height="30" Width="200" FontSize="20" Foreground="#2027BC" Background="White" BorderThickness="0" >
                 <TextBlock>
     <Underline>
     Холодильник
@@ -46,7 +46,7 @@
     </Underline>
                 </TextBlock>
             </Button>
-            <Button Command="{Binding ProductsTelephone}" Grid.Row="4" Height="30" Width="200" FontSize="20" Foreground="#2027BC" Background="White" BorderThickness="0" >
+            <Button Command="{Binding ProductsTelephone}"  Grid.Row="4" Height="30" Width="200" FontSize="20" Foreground="#2027BC" Background="White" BorderThickness="0" >
                 <TextBlock>
     <Underline>
      Телефон

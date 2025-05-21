@@ -160,6 +160,10 @@ namespace _1125.DB
                 db = new UserDB(DBConnection.GetDbConnection());
             return db;
         }
-    
+
+        internal object Auth(object login, object password)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

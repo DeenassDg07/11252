@@ -19,6 +19,7 @@ namespace _1125.DB
             sb.UserID = "student";
             sb.Password = "student";
             sb.Server = "192.168.200.13";
+            //95.154.107.102
             sb.Database = "1125Astrakov";
             sb.CharacterSet = "utf8mb4";
             _connection = new MySqlConnection(sb.ToString());
